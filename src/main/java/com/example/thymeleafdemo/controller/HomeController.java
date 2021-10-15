@@ -21,5 +21,6 @@ public class HomeController {
     public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);
         return "greeting";
+        // If I want a name "John" to be displayed instead of "World", URL has to be: http://localhost:8080/greeting?name=John
     }
 }
