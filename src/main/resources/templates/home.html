@@ -9,6 +9,9 @@
 </head>
 <body>
 <label>Adding multiple elements to heading through iterating over a certain Java collection:</label>
-<h1 th:each="message : ${greetings}" th:text="${message}">Hello, Homepage</h1>
+<h1 th:each="message : ${greetings}"
+    th:text="${message}"
+    th:unless="${message.contains('goodbye')}"
+>Hello, Homepage</h1>
 </body>
 </html>
