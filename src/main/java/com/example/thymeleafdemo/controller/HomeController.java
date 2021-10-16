@@ -27,7 +27,7 @@ public class HomeController {
 
     @GetMapping("/simple-home")
     public String getSimpleHome(Model model){
-        model.addAttribute("firstVisit", "Hello, Homepage!");
+        model.addAttribute("firstVisit", "Anything...");
         return "simple-home";
     }
 

@@ -8,6 +8,10 @@
     <title>Home</title>
 </head>
 <body>
+<form>
+    <input type="text">
+    <input type="submit">
+</form>
 <label>Adding multiple elements to heading through iterating over a certain Java collection:</label>
 <h1 th:each="message : ${greetings}"
     th:text="${message}"
