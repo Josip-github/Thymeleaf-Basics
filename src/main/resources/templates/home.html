@@ -8,8 +8,8 @@
     <title>Home</title>
 </head>
 <body>
-<form th:object="${newMessage}">
-    <input type="text">
+<form th:object="${newMessage}" action="#" method="POST">
+    <input th:field="*{text}" type="text">
     <input type="submit">
 </form>
 <label>Adding multiple elements to heading through iterating over a certain Java collection:</label>
