@@ -12,7 +12,7 @@ import java.time.Instant;
 @Controller
 public class HomeController {
 
-    @RequestMapping("/home")
+    @GetMapping("/home")
     public String getHomePage(Model model){
         model.addAttribute("greetings", new String[]{"Hi", "Hello", "goodbye", "aaagoodbye", "Good day", "Goodbye"});
         return "home";
