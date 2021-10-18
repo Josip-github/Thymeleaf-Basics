@@ -1,5 +1,6 @@
 package com.example.thymeleafdemo.controller;
 
+import com.example.thymeleafdemo.service.MessageListService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,9 +13,15 @@ import java.time.Instant;
 @Controller
 public class HomeController {
 
+    private MessageListService messageListService;
+
+    public HomeController(MessageListService messageListService) {
+        this.messageListService = messageListService;
+    }
+
     @GetMapping("/home")
     public String getHomePage(Model model){
-        model.addAttribute("greetings", new String[]{"Hi", "Hello", "goodbye", "aaagoodbye", "Good day", "Goodbye"});
+        model.addAttribute("greetings", this.messageListService.getMessages());
         return "home";
     }
 
