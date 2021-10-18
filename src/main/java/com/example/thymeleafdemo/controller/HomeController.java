@@ -3,10 +3,7 @@ package com.example.thymeleafdemo.controller;
 import com.example.thymeleafdemo.service.MessageListService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.Instant;
 
@@ -20,7 +17,7 @@ public class HomeController {
     }
 
     @GetMapping("/home")
-    public String getHomePage(Model model){
+    public String getHomePage(@ModelAttribute MessageForm newMessage, Model model){
         model.addAttribute("greetings", this.messageListService.getMessages());
         return "home";
     }
